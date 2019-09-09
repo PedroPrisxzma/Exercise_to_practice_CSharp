@@ -7,10 +7,16 @@ namespace Domain
 {
     public class ItemSales : IItemsSales
     {
-        string productUUID { get; }
-        double unitPrice { get; }
-        double quantity { get; }
-        double TotalPrice()
+        public string productUUID { get; }
+        public double unitPrice { get; }
+        public double quantity { get; }
+        public ItemSales(string ProductUUID, double UnitPrice, double Quantity)
+        {
+            unitPrice = UnitPrice;
+            productUUID = ProductUUID;
+            quantity = Quantity;
+        }
+        public double TotalPrice()
         {
             return unitPrice * quantity;
         }
